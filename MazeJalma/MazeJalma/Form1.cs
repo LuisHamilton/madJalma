@@ -28,6 +28,11 @@ namespace MazeJalma
         int speedcX = 0;
         int speedcY = 0;
         int pontos = 0;
+        int col = 0;
+        int coinX;
+        int coinY;
+        Random randX = new Random();
+        Random randY = new Random();
 
         Player playerEvents;
 
@@ -37,8 +42,10 @@ namespace MazeJalma
 
             int x = 0;
             int y = 0;
-            int coinX = 1000;
-            int coinY = 1000;
+
+            
+            coinX = randX.Next(500, 3660);
+            coinY = randY.Next(500, 2247);
 
             Timer tm = new Timer();
             tm.Interval = 20;
@@ -112,11 +119,23 @@ namespace MazeJalma
                     x = 0;
                 if (y < 0)
                     y = 0;
+                score.Text = $"{pontos+=col}";
+                
                 playerEvents.mapMove(x, y, mapimage, pictureBox2);
                 playerEvents.coinMove(coinimage, coinX, coinY);
                 playerEvents.rotateSoldier(angle, soldierimage, pictureBox2);
+                col = playerEvents.collisionCoinY();
+
+                if(col == 1)
+                {
+                    coinX = randX.Next(500, 3660);
+                    coinY = randY.Next(500, 2247);
+                }
+
+                lblAmmo.Text = $"{x} - {y}";
+                lblKill.Text = $"{coinX} - {coinY}";
+
                 pictureBox2.Refresh();
-                
             };
         }
 
