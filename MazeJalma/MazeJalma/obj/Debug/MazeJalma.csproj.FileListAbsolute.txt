@@ -46,3 +46,15 @@ E:\repoGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.GenerateReso
 E:\repoGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.CoreCompileInputs.cache
 E:\repoGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.exe
 E:\repoGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.pdb
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\bin\Debug\MazeJalma.exe.config
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\bin\Debug\MazeJalma.exe
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\bin\Debug\MazeJalma.pdb
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.AssemblyReference.cache
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.SuggestedBindingRedirects.cache
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Form1.resources
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Formlogin.resources
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Properties.Resources.resources
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.GenerateResource.cache
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.CoreCompileInputs.cache
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.exe
+C:\Users\disrct\Desktop\repos\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.pdb
