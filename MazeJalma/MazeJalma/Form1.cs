@@ -67,7 +67,7 @@ namespace MazeJalma
 
                 playerEvents = new Player(g2);
                 coinEvents = new Coin(g2);
-                bulletEvents = new Bullet(g2);
+                bulletEvents = null;
 
                 tm.Start();
             };
@@ -139,13 +139,22 @@ namespace MazeJalma
                 coinEvents.coinMove(coinimage, coinX, coinY);
                 soldierRect = playerEvents.rotateSoldier(angle, soldierimage, pictureBox2);
 
-                if(click==true)
+                if (bulletEvents != null)
+                {
+                    bulletEvents.Update();
+                    bulletEvents.Draw();
+                }
+
+                if (click)
                 {
                     click = false;
-                            bulletEvents.Loop(mouseX, mouseY, middleX, middleY);
+
+                    bulletEvents = new Bullet(g2, new PointF(middleX, middleY), 
+                        (float)Math.Cos(angle * (2 * Math.PI) / 360f),
+                        (float)Math.Sin(angle * (2 * Math.PI) / 360f));
                 }
                 
-                col = coinEvents.collisionCoinY(soldierRect);
+                col = coinEvents.collisionCoin(soldierRect);
                 if(col == 1)
                 {
                     if (spawn == false)
