@@ -14,6 +14,8 @@ namespace MazeJalma
     public class Player
     {
         private Graphics g = null;
+        private Rectangle coinRect;
+        private Rectangle soldierRect;
 
         public Player(Graphics g)
         {
@@ -28,21 +30,8 @@ namespace MazeJalma
                 new Rectangle(0, 0, pb.Width, pb.Height),
                 new Rectangle(x, y, pb.Width, pb.Height), GraphicsUnit.Pixel);
         }
-        public void coinMove(Bitmap coin, int coinX, int coinY)
-        {
-            int coinW = 50;
-            int coinH = 50;
-            g.TranslateTransform(coinX, coinY);
-            g.DrawImage(coin,
-                new Rectangle(0, 0, coinW, coinH),
-                new Rectangle(0, 0, coinW * 4, coinH * 4), GraphicsUnit.Pixel);
-            g.TranslateTransform(-coinX, -coinY);
-        }
-        public void collisionCoin(int x, int y, int coinX, int coinY)
-        {
-            
-        }
-        public void rotateSoldier(float angle, Bitmap btm, PictureBox pb)
+        
+        public Rectangle rotateSoldier(float angle, Bitmap btm, PictureBox pb)
         {
 
             int deslocx = pb.Width / 2;
@@ -56,8 +45,12 @@ namespace MazeJalma
                 new Rectangle(0, 0, btm.Width * 2, btm.Height * 2),
                 GraphicsUnit.Pixel);
 
+            soldierRect = new Rectangle(pb.Width / 2 - btm.Width / 4 + 5, pb.Height / 2 - btm.Height / 4 - 15 / 2, btm.Width / 2 - 10, btm.Height / 2 + 15);
+
             g.RotateTransform(-angle);
             g.TranslateTransform(-deslocx, -deslocy);
+
+            return soldierRect;
         }
     }
 }

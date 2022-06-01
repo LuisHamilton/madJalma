@@ -62,7 +62,7 @@
             this.lblAmmo.ForeColor = System.Drawing.Color.White;
             this.lblAmmo.Location = new System.Drawing.Point(339, 20);
             this.lblAmmo.Name = "lblAmmo";
-            this.lblAmmo.Size = new System.Drawing.Size(67, 32);
+            this.lblAmmo.Size = new System.Drawing.Size(164, 32);
             this.lblAmmo.TabIndex = 1;
             this.lblAmmo.Text = "0";
             this.lblAmmo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -74,7 +74,7 @@
             this.lblKill.ForeColor = System.Drawing.Color.White;
             this.lblKill.Location = new System.Drawing.Point(93, 20);
             this.lblKill.Name = "lblKill";
-            this.lblKill.Size = new System.Drawing.Size(90, 32);
+            this.lblKill.Size = new System.Drawing.Size(149, 32);
             this.lblKill.TabIndex = 3;
             this.lblKill.Text = "0";
             this.lblKill.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
