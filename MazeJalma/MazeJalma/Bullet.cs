@@ -16,16 +16,47 @@ namespace MazeJalma
     {
         Graphics g;
         float angle;
+        Brush brush;
 
         public Bullet (Graphics g)
         {
             this.g = g;
-            this.angle = angle;
         }
 
-        public void Loop(float angle)
+        public void Loop(int X, int Y, int pX, int pY)
         {
-
+            if (X >= pX)
+            {
+                for (int posX = pX; posX <= X; posX += 18)
+                {
+                    if(Y >= pY)
+                    {
+                        for (int posY = pY; posY <= Y; posY += 18)
+                            g.FillEllipse(Brushes.Black, new RectangleF(posX, posY, 10, 10));
+                    }
+                    else
+                    {
+                        for (int posY = pY; posY >= Y; posY -= 18)
+                            g.FillEllipse(Brushes.Black, new RectangleF(posX, posY, 10, 10));
+                    }
+                }
+            }
+            else
+            {
+                for (int posX = pX; posX >= X; posX -= 18)
+                {
+                    if (Y >= pY)
+                    {
+                        for (int posY = pY; posY <= Y; posY += 18)
+                            g.FillEllipse(Brushes.Black, new RectangleF(posX, posY, 10, 10));
+                    }
+                    else
+                    {
+                        for (int posY = pY; posY >= Y; posY -= 18)
+                            g.FillEllipse(Brushes.Black, new RectangleF(posX, posY, 10, 10));
+                    }
+                }
+            }
         }
     }
 }
