@@ -21,24 +21,25 @@ namespace MazeJalma
         private Bitmap coinimage = Properties.Resources.coin;
         private Graphics g2 = null;
 
-        Bitmap bmp = null;
-        Bitmap btmp = null;
         int speedx = 0;
         int speedy = 0;
         int speedcX = 0;
         int speedcY = 0;
         int pontos = 0;
         int col = 0;
-        int coinX;
-        int coinY;
-
+        int coinX = 0;
+        int coinY = 0;
         bool spawn = false;
+        bool click = false;
+
         Random randX = new Random();
         Random randY = new Random();
+
         Rectangle soldierRect;
 
         Player playerEvents;
         Coin coinEvents;
+        Bullet bulletEvents;
 
         public Form1()
         {
@@ -47,21 +48,27 @@ namespace MazeJalma
             int x = 0;
             int y = 0;
 
-            
             coinX = randX.Next(500, 2660);
             coinY = randY.Next(500, 1620);
+
+            int middleX = this.Width / 2;
+            int middleY = this.Height / 2;
 
             Timer tm = new Timer();
             tm.Interval = 20;
 
-
             this.Load += delegate
             {
                 score.Text = $"{pontos}";
+
                 pictureBox2.SendToBack();
+
                 g2 = Graphics.FromImage(pictureBox2.Image);
+
                 playerEvents = new Player(g2);
                 coinEvents = new Coin(g2);
+                bulletEvents = null;
+
                 tm.Start();
             };
             this.KeyDown += (s, e) =>
@@ -121,34 +128,33 @@ namespace MazeJalma
                 coinX += speedcX;
                 coinY += speedcY;
 
-                if (x < 0)
-                {
-                    x = 0;
-                    coinX -= speedcX;
-                }
-                if (y < 0)
-                {
-                    y = 0;
-                    coinY -= speedcY;
-                }
-                if (x >= 2660)
-                {
-                    x = 2660;
-                    coinX -= speedcX;
-                }
-                if (y >= 1620)
-                {
-                    y = 1620;
-                    coinY -= speedcY;
-                }
+                if (x < 0){ x = 0; coinX -= speedcX; }
+                if (y < 0){ y = 0; coinY -= speedcY; }
+                if (x >= 2660){ x = 2660; coinX -= speedcX; }
+                if (y >= 1620) { y = 1620; coinY -= speedcY; }
 
                 score.Text = $"{pontos+=col}";
                 
                 playerEvents.mapMove(x, y, mapimage, pictureBox2);
                 coinEvents.coinMove(coinimage, coinX, coinY);
                 soldierRect = playerEvents.rotateSoldier(angle, soldierimage, pictureBox2);
-                col = coinEvents.collisionCoinY(soldierRect);
 
+                if (bulletEvents != null)
+                {
+                    bulletEvents.Update();
+                    bulletEvents.Draw();
+                }
+
+                if (click)
+                {
+                    click = false;
+
+                    bulletEvents = new Bullet(g2, new PointF(middleX, middleY), 
+                        (float)Math.Cos(angle * (2 * Math.PI) / 360f),
+                        (float)Math.Sin(angle * (2 * Math.PI) / 360f));
+                }
+                
+                col = coinEvents.collisionCoin(soldierRect);
                 if(col == 1)
                 {
                     if (spawn == false)
@@ -165,6 +171,8 @@ namespace MazeJalma
                     }
                 }
 
+
+
                 lblAmmo.Text = $"{x}-{y}";
                 lblKill.Text = $"{coinX}-{coinY}";
 
@@ -178,10 +186,21 @@ namespace MazeJalma
         }
 
         float angle = 0;
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            click = true;
+        }
+
+        int mouseX = 0;
+        int mouseY = 0;
+
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             Point center = new Point(this.Width / 2, this.Height / 2);
             angle = (float)Math.Atan2(e.Y - center.Y, e.X - center.X) * (float)(180 / Math.PI);
+            mouseX = e.X;
+            mouseY = e.Y;
         }
     }
 }

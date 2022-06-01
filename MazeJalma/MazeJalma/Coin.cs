@@ -34,7 +34,7 @@ namespace MazeJalma
 
             coinRect = new Rectangle(coinX, coinY, coinW, coinH);
         }
-        public int collisionCoinY(Rectangle soldier)
+        public int collisionCoin(Rectangle soldier)
         {
             soldierRect = soldier;
 
