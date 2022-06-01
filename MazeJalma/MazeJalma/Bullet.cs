@@ -22,7 +22,7 @@ namespace MazeJalma
         {
             this.g = g;
             this.Location = loc;
-            this.Speed = new SizeF(cx, cy);
+            this.Speed = new SizeF(50 * cx, 50 * cy);
         }
 
         public void Draw()
@@ -32,7 +32,7 @@ namespace MazeJalma
 
         public void Update()
         {
-            Location += Speed * 2;
+            Location += Speed;
         }
     }
 }

@@ -171,11 +171,6 @@ namespace MazeJalma
                     }
                 }
 
-
-
-                lblAmmo.Text = $"{x}-{y}";
-                lblKill.Text = $"{coinX}-{coinY}";
-
                 pictureBox2.Refresh();
             };
         }
