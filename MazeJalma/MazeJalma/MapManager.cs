@@ -12,7 +12,6 @@ namespace Watersan_e_Firejalma
     public class MapManager
     {
 
-
         public List<Box> blocks { get; set; } = new List<Box>();
         public List<Character> characters { get; set; } = new List<Character>();
         public List<Asset> assets { get; set; } = new List<Asset>();
@@ -20,31 +19,13 @@ namespace Watersan_e_Firejalma
         public string mapLayout;
 
 
-        public Image FullBlock = Properties.Blocks.BlocoInteiro;            // a
-        public Image FullWaterBlock = Properties.Blocks.BlocoAgua;          // c
-        public Image FullLavaBlock = Properties.Blocks.BlocoLava;           // f
-        public Image FullDeathBlock = Properties.Blocks.BlocoMorte;         // m
-
-        public Image RightDiagonal = Properties.Blocks.DiagonalDir;         // i
-        public Image RightDiagonalWater = Properties.Blocks.CantoDirAgua;   // g
-        public Image RightDiagonalLava = Properties.Blocks.CantoDirLava;    // d
-        public Image RightDiagonalDeath = Properties.Blocks.CantoDirMorte;  // n
-
-        public Image LeftDiagonal = Properties.Blocks.DiagonalEsq;          // h
-        public Image LeftDiagonalWater = Properties.Blocks.CantoEsqAgua;    // e
-        public Image LeftDiagonalLava = Properties.Blocks.CantoEsqLava;     // b
-        public Image LeftDiagonalDeath = Properties.Blocks.CantoEsqMorte;   // l
-
-        public Image TopRightDiagonal = Properties.Blocks.BlocoDiagInvDir;  // k
-        public Image TopLeftDiagonal = Properties.Blocks.BlocoDiagInvEsq;   // j 
+        public Image FullBlock = MazeJalma.Properties.Resources.parede;// a
+        public Image FloorBlock = MazeJalma.Properties.Resources.chao; // v
 
         private Character character;
         private Asset asset;
 
         private int BlockType;
-
-
-
 
         Image sprite = null;
 
@@ -110,81 +91,10 @@ namespace Watersan_e_Firejalma
                         switch (strBlockChar)
                         {
                             case "a":
-                                sprite = FullBlock;
-                                BlockType = 0;
-                                break;
-                            case "b":
-                                sprite = LeftDiagonalLava;
-                                BlockType = 1;
-                                break;
-                            case "c":
-                                sprite = FullLavaBlock;
-                                BlockType = 1;
-                                break;
-                            case "d":
-                                sprite = RightDiagonalLava;
-                                BlockType = 1;
-                                break;
-                            case "e":
-                                sprite = LeftDiagonalWater;
-                                BlockType = 2;
-                                break;
-                            case "f":
-                                sprite = FullWaterBlock;
-                                BlockType = 2;
-                                break;
-                            case "g":
-                                sprite = RightDiagonalWater;
-                                BlockType = 2;
-                                break;
-                            case "h":
-                                sprite = LeftDiagonal;
-                                BlockType = 4;
-                                break;
-                            case "i":
-                                sprite = RightDiagonal;
-                                BlockType = 4;
-                                break;
-                            case "j":
-                                sprite = TopLeftDiagonal;
-                                BlockType = 4;
-                                break;
-                            case "k":
-                                sprite = TopRightDiagonal;
-                                BlockType = 4;
-                                break;
-                            case "l":
-                                sprite = LeftDiagonalDeath;
-                                BlockType = 3;
-                                break;
-                            case "m":
-                                sprite = FullDeathBlock;
-                                BlockType = 3;
-                                break;
-                            case "n":
-                                sprite = RightDiagonalDeath;
-                                BlockType = 3;
-                                break;
-
-                            case "o":
-                                sprite = null;
-                                character = new Edjalma(currentPosX, currentPosY);
-                                characters.Add(character);
-                                break;
-
-                            case "p":
-                                sprite = null;
-                                character = new Trevisan(currentPosX, currentPosY);
-                                characters.Add(character);
-                                break;
-                            case "q":
-                                sprite = null;
-                                asset = new Brownie(currentPosX, currentPosY);
-                                characters.Add(character);
-                                break;
-
+                                sprite = FullBlock;                   
+                                break;     
                             case "v":
-                                sprite = null;
+                                sprite = FloorBlock;                                
                                 break;
                         }
 
