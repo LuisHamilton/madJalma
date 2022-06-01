@@ -63,6 +63,7 @@
     <Compile Include="Formlogin.Designer.cs">
       <DependentUpon>Formlogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapManager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +98,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Arte\map.txt" />
     <Content Include="icone.ico" />
     <None Include="Resources\grass.png" />
     <None Include="Resources\coin.png" />
@@ -107,6 +109,9 @@
     <None Include="Resources\background.jpg" />
     <None Include="Resources\survivor-move_knife_12.png" />
     <None Include="Resources\1000x1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Arte\blocos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
