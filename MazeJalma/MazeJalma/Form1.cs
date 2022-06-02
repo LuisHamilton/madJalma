@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace MazeJalma
 {
@@ -146,7 +147,7 @@ namespace MazeJalma
                 if (y >= 1620) { y = 1620; ammoY -= speedcY; }
 
                 score.Text = $"{pontos+=col}";
-                lblAmmo.Text = $"{municao += col2}";
+                lblAmmo.Text = $"{municao += col2*3}";
                 
                 playerEvents.mapMove(x, y, mapimage, pictureBox2);
                 coinEvents.coinMove(coinimage, coinX, coinY);
@@ -164,6 +165,7 @@ namespace MazeJalma
                     click = false;
                     if(municao>0)
                     {
+                        playShootSound();
                         municao--;
                         bulletEvents = new Bullet(g2, new PointF(middleX, middleY), 
                             (float)Math.Cos(angle * (2 * Math.PI) / 360f),
@@ -224,6 +226,11 @@ namespace MazeJalma
         {
             Point center = new Point(this.Width / 2, this.Height / 2);
             angle = (float)Math.Atan2(e.Y - center.Y, e.X - center.X) * (float)(180 / Math.PI);
+        }
+        private void playShootSound()
+        {
+            SoundPlayer shootSound = new SoundPlayer(Properties.Resources.tiro);
+            shootSound.Play();
         }
     }
 }

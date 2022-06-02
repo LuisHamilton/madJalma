@@ -100,6 +100,11 @@
   <ItemGroup>
     <Content Include="Arte\map.txt" />
     <Content Include="icone.ico" />
+    <None Include="Resources\reload.wav" />
+    <None Include="Resources\tiro.wav" />
+    <None Include="Resources\coin.wav" />
+    <None Include="Resources\step.wav" />
+    <None Include="Resources\y2meta.com - Som de passos de Minecraft %28320 kbps%29 %281%29.mp3" />
     <None Include="Resources\ammoImg.png" />
     <None Include="Resources\grass.png" />
     <None Include="Resources\coin.png" />

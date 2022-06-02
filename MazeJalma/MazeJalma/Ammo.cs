@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace MazeJalma
 {
@@ -43,24 +44,33 @@ namespace MazeJalma
             if (soldierRect.Top <= ammoRect.Bottom && soldierRect.Top > ammoRect.Top && ammoRect.Left >= soldierRect.Left && ammoRect.Left <= soldierRect.Right ||
                 soldierRect.Top <= ammoRect.Bottom && soldierRect.Top > ammoRect.Top && ammoRect.Right >= soldierRect.Left && ammoRect.Right <= soldierRect.Right)
             {
+                playReloadSound();
                 return 1;
             }
             if (soldierRect.Bottom >= ammoRect.Top && soldierRect.Bottom < ammoRect.Bottom && ammoRect.Left >= soldierRect.Left && ammoRect.Left <= soldierRect.Right ||
                soldierRect.Bottom >= ammoRect.Top && soldierRect.Bottom < ammoRect.Bottom && ammoRect.Right >= soldierRect.Left && ammoRect.Right <= soldierRect.Right)
             {
+                playReloadSound();
                 return 1;
             }
             if (soldierRect.Right >= ammoRect.Left && soldierRect.Right < ammoRect.Right && ammoRect.Top >= soldierRect.Top && ammoRect.Top <= soldierRect.Bottom ||
                soldierRect.Right >= ammoRect.Left && soldierRect.Right < ammoRect.Right && ammoRect.Bottom >= soldierRect.Top && ammoRect.Bottom <= soldierRect.Bottom)
             {
+                playReloadSound();
                 return 1;
             }
             if (soldierRect.Left <= ammoRect.Right && soldierRect.Left > ammoRect.Left && ammoRect.Top >= soldierRect.Top && ammoRect.Top <= soldierRect.Bottom ||
                soldierRect.Left <= ammoRect.Right && soldierRect.Left > ammoRect.Left && ammoRect.Bottom >= soldierRect.Top && ammoRect.Bottom <= soldierRect.Bottom)
             {
+                playReloadSound();
                 return 1;
             }
             return 0;
+        }
+        private void playReloadSound()
+        {
+            SoundPlayer ammoSound = new SoundPlayer(Properties.Resources.reload);
+            ammoSound.Play();
         }
     }
 }

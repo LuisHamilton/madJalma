@@ -70,3 +70,15 @@ C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\Maze
 C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.CoreCompileInputs.cache
 C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.exe
 C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.pdb
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\bin\Debug\MazeJalma.exe.config
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\bin\Debug\MazeJalma.exe
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\bin\Debug\MazeJalma.pdb
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.AssemblyReference.cache
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.SuggestedBindingRedirects.cache
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Form1.resources
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Formlogin.resources
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Properties.Resources.resources
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.GenerateResource.cache
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.CoreCompileInputs.cache
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.exe
+E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.pdb

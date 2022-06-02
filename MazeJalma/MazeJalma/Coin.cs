@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace MazeJalma
 {
@@ -44,24 +45,34 @@ namespace MazeJalma
             if (soldierRect.Top <= coinRect.Bottom && soldierRect.Top > coinRect.Top && coinRect.Left >= soldierRect.Left && coinRect.Left <= soldierRect.Right ||
                 soldierRect.Top <= coinRect.Bottom && soldierRect.Top > coinRect.Top && coinRect.Right >= soldierRect.Left && coinRect.Right <= soldierRect.Right)
             {
+                playCoinSound();
                 return 1;
             }
             if (soldierRect.Bottom >= coinRect.Top && soldierRect.Bottom < coinRect.Bottom && coinRect.Left >= soldierRect.Left && coinRect.Left <= soldierRect.Right ||
                soldierRect.Bottom >= coinRect.Top && soldierRect.Bottom < coinRect.Bottom && coinRect.Right >= soldierRect.Left && coinRect.Right <= soldierRect.Right)
             {
+                playCoinSound();
                 return 1;
             }
             if (soldierRect.Right >= coinRect.Left && soldierRect.Right < coinRect.Right && coinRect.Top >= soldierRect.Top && coinRect.Top <= soldierRect.Bottom ||
                soldierRect.Right >= coinRect.Left && soldierRect.Right < coinRect.Right && coinRect.Bottom >= soldierRect.Top && coinRect.Bottom <= soldierRect.Bottom)
             {
+                playCoinSound();
                 return 1;
             }
             if (soldierRect.Left <= coinRect.Right && soldierRect.Left > coinRect.Left && coinRect.Top >= soldierRect.Top && coinRect.Top <= soldierRect.Bottom ||
                soldierRect.Left <= coinRect.Right && soldierRect.Left > coinRect.Left && coinRect.Bottom >= soldierRect.Top && coinRect.Bottom <= soldierRect.Bottom)
             {
+                playCoinSound();
                 return 1;
             }
             return 0;
+        }
+
+        private void playCoinSound()
+        {
+            SoundPlayer coinSound = new SoundPlayer(Properties.Resources.coin1);
+            coinSound.Play();
         }
     }
 }
