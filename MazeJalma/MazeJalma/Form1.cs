@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 
@@ -15,10 +8,11 @@ namespace MazeJalma
 
     public partial class Form1 : Form
     {
-        private Bitmap soldierimage = Properties.Resources.survivor_move_knife_12;
+        private Bitmap soldierimage = Properties.Resources.shooting;
         private Bitmap mapimage = Properties.Resources.background;
         private Bitmap coinimage = Properties.Resources.coin;
         private Bitmap ammoimage = Properties.Resources.ammoImg;
+        private Bitmap botimage = Properties.Resources.survivor_move_knife_12;
         private Graphics g2 = null;
 
         int speedx = 0;
@@ -46,6 +40,7 @@ namespace MazeJalma
         Coin coinEvents;
         Bullet bulletEvents;
         Ammo ammoEvents;
+        Bot botEvents;
 
         public Form1()
         {
@@ -76,8 +71,10 @@ namespace MazeJalma
                 playerEvents = new Player(g2);
                 coinEvents = new Coin(g2);
                 ammoEvents = new Ammo(g2);
+                botEvents = new Bot(g2);
                 bulletEvents = null;
 
+                botEvents.start(botimage);
                 tm.Start();
             };
             this.KeyDown += (s, e) =>
