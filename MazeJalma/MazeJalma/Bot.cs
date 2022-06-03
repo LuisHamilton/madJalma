@@ -8,44 +8,51 @@ namespace MazeJalma
     public class Bot
     {
         private Graphics g;
-        private int x = 2560;
-        private int y = 1520;
-        private int speed = 18;
         private Random rand = new Random();
+        private Rectangle botRect;
+        float angle = 0; 
+        float dt = 0;
+        float botX = 0; float botY = 0;
+        Bullet bulletEvents = null;
 
-        public Bot (Graphics g)
+        public Bot(Graphics g)
         {
-            this.g = g;
+            this.g = g; 
         }
 
-        public void start(Bitmap bmp)
+        public void botMove(Bitmap bmp, int botX, int botY)
         {
-            g.Clear(Color.Transparent);
-            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            g.DrawImage(bmp,
-                new Rectangle(x, y, bmp.Width, bmp.Height));
-        }
-
-        public void globalMove(Bitmap bmp)
-        {
-            int coinW = 50;
-            int coinH = 50;
-            g.TranslateTransform(x, y);
-            g.DrawImage(bmp,
-                new Rectangle(0, 0, coinW, coinH),
-                new Rectangle(0, 0, coinW * 4, coinH * 4), GraphicsUnit.Pixel);
-            g.TranslateTransform(-x, -y);
-
-            //coinRect = new Rectangle(x, y, coinW, coinH);
-        }
-
-        public void Move(Bitmap bmp)
-        {
-            g.Clear(Color.Transparent);
-            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g.TranslateTransform(botX, botY);
             g.DrawImage(bmp,
                 new Rectangle(0, 0, bmp.Width, bmp.Height),
-                new Rectangle(x, y, bmp.Width*2, bmp.Height*2), GraphicsUnit.Pixel);
+                new Rectangle(0, 0, bmp.Width * 2, bmp.Height * 2), GraphicsUnit.Pixel);
+            g.TranslateTransform(-botX, -botY);
+
+
+            botRect = new Rectangle(botX, botY, bmp.Width / 2 - 18, bmp.Height / 2 + 5);
+            g.DrawRectangle(Pens.Red, botRect);
+        }
+
+        public void followCoin()
+        {
+
+        }
+
+        public PointF update(PointF Location, SizeF destiny, int speed)
+        {
+            destiny = new SizeF(destiny.Width - Location.X, destiny.Height - Location.Y);
+            dt = speed / (float)Math.Sqrt(destiny.Width * destiny.Width + destiny.Height * destiny.Height);
+            Location += new SizeF(destiny.Width * dt, destiny.Height * dt);
+            return Location;
+        }
+
+        public void shoot(int playerX, int playerY)
+        {
+            angle = (float)Math.Atan2(playerY - botY, playerX - botX) * (float)(180 / Math.PI);
+
+            bulletEvents = new Bullet(g, new PointF(botX, botY),
+                            (float)Math.Cos(angle * (2 * Math.PI) / 360f),
+                            (float)Math.Sin(angle * (2 * Math.PI) / 360f));
         }
     }
 }

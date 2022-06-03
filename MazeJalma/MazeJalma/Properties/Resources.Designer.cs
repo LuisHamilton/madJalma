@@ -83,16 +83,6 @@ namespace MazeJalma.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background {
-            get {
-                object obj = ResourceManager.GetObject("background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap chao {
             get {
                 object obj = ResourceManager.GetObject("chao", resourceCulture);
@@ -122,9 +112,9 @@ namespace MazeJalma.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fundo {
+        internal static System.Drawing.Bitmap grama {
             get {
-                object obj = ResourceManager.GetObject("fundo", resourceCulture);
+                object obj = ResourceManager.GetObject("grama", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

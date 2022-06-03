@@ -9,6 +9,7 @@ namespace MazeJalma
         public PointF Location { get; set; }
         public SizeF Speed { get; set; }
 
+
         public Bullet (Graphics g, PointF loc, float cx, float cy)
         {
             this.g = g;

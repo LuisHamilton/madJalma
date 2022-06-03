@@ -101,6 +101,7 @@
   <ItemGroup>
     <Content Include="Arte\map.txt" />
     <Content Include="icone.ico" />
+    <None Include="Resources\grama.png" />
     <None Include="Resources\shooting.png" />
     <None Include="Resources\reload.wav" />
     <None Include="Resources\tiro.wav" />

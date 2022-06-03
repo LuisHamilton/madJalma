@@ -40,7 +40,7 @@ namespace MazeJalma
                 new Rectangle(0, 0, btm.Width * 2, btm.Height * 2),
                 GraphicsUnit.Pixel);
 
-            soldierRect = new Rectangle(pb.Width / 2 - btm.Width / 4 + 5, pb.Height / 2 - btm.Height / 4 - 15 / 2, btm.Width / 2 - 10, btm.Height / 2 + 15);
+            soldierRect = new Rectangle(pb.Width / 2 - btm.Width / 4 + 5, pb.Height / 2 - btm.Height / 4 - 15 / 2, btm.Width / 2 - 18, btm.Height / 2 + 5);
 
             g.RotateTransform(-angle);
             g.TranslateTransform(-deslocx, -deslocy);
