@@ -9,7 +9,6 @@ namespace MazeJalma
     public class Player
     {
         private Graphics g = null;
-        private Rectangle coinRect;
         private Rectangle soldierRect;
 
         public Player(Graphics g)

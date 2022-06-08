@@ -81,11 +81,20 @@ namespace MazeJalma.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream audioSemMuni {
+            get {
+                return ResourceManager.GetStream("audioSemMuni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chao {
+        internal static System.Drawing.Bitmap cena {
             get {
-                object obj = ResourceManager.GetObject("chao", resourceCulture);
+                object obj = ResourceManager.GetObject("cena", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -110,42 +119,104 @@ namespace MazeJalma.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap grama {
+        internal static System.IO.UnmanagedMemoryStream demais {
             get {
-                object obj = ResourceManager.GetObject("grama", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("demais", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap grass {
+        internal static System.Drawing.Bitmap ed {
             get {
-                object obj = ResourceManager.GetObject("grass", resourceCulture);
+                object obj = ResourceManager.GetObject("ed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ed1 {
+            get {
+                return ResourceManager.GetStream("ed1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ele_gosta {
+            get {
+                return ResourceManager.GetStream("ele_gosta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream eu_adoro {
+            get {
+                return ResourceManager.GetStream("eu_adoro", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap parede {
+        internal static System.Drawing.Bitmap imagemBack {
             get {
-                object obj = ResourceManager.GetObject("parede", resourceCulture);
+                object obj = ResourceManager.GetObject("imagemBack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream maldito {
+            get {
+                return ResourceManager.GetStream("maldito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream mine {
+            get {
+                return ResourceManager.GetStream("mine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream obrigado {
+            get {
+                return ResourceManager.GetStream("obrigado", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ponto {
+        internal static System.Drawing.Bitmap otto {
             get {
-                object obj = ResourceManager.GetObject("ponto", resourceCulture);
+                object obj = ResourceManager.GetObject("otto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream pop {
+            get {
+                return ResourceManager.GetStream("pop", resourceCulture);
             }
         }
         
@@ -193,6 +264,25 @@ namespace MazeJalma.Properties {
         internal static System.IO.UnmanagedMemoryStream tiro {
             get {
                 return ResourceManager.GetStream("tiro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream tome {
+            get {
+                return ResourceManager.GetStream("tome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhiteBack {
+            get {
+                object obj = ResourceManager.GetObject("WhiteBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

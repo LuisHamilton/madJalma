@@ -82,3 +82,7 @@ E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.Generate
 E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.csproj.CoreCompileInputs.cache
 E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.exe
 E:\repositorio\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.pdb
+C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Menu.resources
+C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.victory.resources
+C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Defeat.resources
+C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.FrmLoad.resources
