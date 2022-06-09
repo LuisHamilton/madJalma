@@ -9,6 +9,10 @@ namespace MazeJalma
         private Graphics g;
         private Rectangle botRect;
         float dt = 0;
+        Random rand = new Random();
+        SoundPlayer edMaldito = new SoundPlayer(Properties.Resources.maldito);
+        SoundPlayer edQuebrar = new SoundPlayer(Properties.Resources.ed1);
+        int i = 0;
 
         public Bot(Graphics g)
         {
@@ -40,43 +44,31 @@ namespace MazeJalma
             return Location;
         }
 
-
-        private RectangleF bulletRect;
         public int killBot(RectangleF bullet)
         {
-           bulletRect = bullet;
-
-           if (botRect.Top <= bulletRect.Bottom && botRect.Top > bulletRect.Top && bulletRect.Left >= botRect.Left && bulletRect.Left <= botRect.Right ||
-               botRect.Top <= bulletRect.Bottom && botRect.Top > bulletRect.Top && bulletRect.Right >= botRect.Left && bulletRect.Right <= botRect.Right)
-           {
-                playEdSound();
-               return 1;
-           }
-           if (botRect.Bottom >= bulletRect.Top && botRect.Bottom < bulletRect.Bottom && bulletRect.Left >= botRect.Left && bulletRect.Left <= botRect.Right ||
-              botRect.Bottom >= bulletRect.Top && botRect.Bottom < bulletRect.Bottom && bulletRect.Right >= botRect.Left && bulletRect.Right <= botRect.Right)
-           {
+            if (botRect.Contains(new Point((int)bullet.Location.X, (int)bullet.Location.Y)))
+            {
                 playEdSound();
                 return 1;
-           }
-           if (botRect.Right >= bulletRect.Left && botRect.Right < bulletRect.Right && bulletRect.Top >= botRect.Top && bulletRect.Top <= botRect.Bottom ||
-              botRect.Right >= bulletRect.Left && botRect.Right < bulletRect.Right && bulletRect.Bottom >= botRect.Top && bulletRect.Bottom <= botRect.Bottom)
-           {
-                playEdSound();
-                return 1;
-           }
-           if (botRect.Left <= bulletRect.Right && botRect.Left > bulletRect.Left && bulletRect.Top >= botRect.Top && bulletRect.Top <= botRect.Bottom ||
-              botRect.Left <= bulletRect.Right && botRect.Left > bulletRect.Left && bulletRect.Bottom >= botRect.Top && bulletRect.Bottom <= botRect.Bottom)
-           {
-                playEdSound();
-                return 1;
-           }
-           return 0;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public void playEdSound()
         {
-            SoundPlayer edSound = new SoundPlayer(Properties.Resources.maldito);
-            edSound.Play();
+            i = rand.Next(1, 3);
+            switch(i)
+            {
+                case 1:
+                    edMaldito.Play();
+                    break;
+                case 2:
+                    edQuebrar.Play();
+                    break;
+            }
         }
     }
 }

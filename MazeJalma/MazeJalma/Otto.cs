@@ -30,9 +30,6 @@ namespace MazeJalma
         {
             soldierRect = soldier;
 
-            g.DrawRectangle(Pens.Red, ottoRect);
-            g.DrawRectangle(Pens.Red, soldierRect);
-
             if (soldierRect.Top <= ottoRect.Bottom && soldierRect.Top > ottoRect.Top && ottoRect.Left >= soldierRect.Left && ottoRect.Left <= soldierRect.Right ||
                 soldierRect.Top <= ottoRect.Bottom && soldierRect.Top > ottoRect.Top && ottoRect.Right >= soldierRect.Left && ottoRect.Right <= soldierRect.Right)
             {
@@ -67,13 +64,6 @@ namespace MazeJalma
                 new Rectangle(x, y, ottoW, ottoH));
         }
 
-        public void animOtto(Bitmap otto, int x, int y)
-        {
-            int ottoW = 50; int ottoH = 50;
-            g.DrawImage(otto,
-                new Rectangle(0, 0, ottoW, ottoH),
-                new Rectangle(x, y, ottoW, ottoH), GraphicsUnit.Pixel);
-        }
         private void playOttoSound()
         {
             SoundPlayer ottoSound = new SoundPlayer(Properties.Resources.pop);

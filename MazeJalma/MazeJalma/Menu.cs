@@ -21,6 +21,8 @@ namespace MazeJalma
         private Graphics g = null;
 
         Otto ottoEvents;
+        Formlogin frm = new Formlogin();
+        SoundPlayer som = new SoundPlayer(Properties.Resources.mine);
 
         public Menu()
         {
@@ -30,7 +32,6 @@ namespace MazeJalma
 
             Timer tm = new Timer();
             tm.Interval = 20;
-            Formlogin frm;
 
             this.Load += delegate
             {
@@ -55,7 +56,6 @@ namespace MazeJalma
             };
             tm.Tick += delegate
             {
-                frm = new Formlogin();
 
                 loreLabel.Text = "Esses são os ottos...";
                 Task.Delay(2000).Wait();
@@ -63,8 +63,8 @@ namespace MazeJalma
                 Task.Delay(2000).Wait();
                 loreLabel.Text = "Um inimigo gosta deles e procura sequestrá-los...";
                 Task.Delay(3000).Wait();
-                loreLabel.Text = "Você tem uma bússula, a ponteira amarela é munição, e a vermelha é ele...";
-                Task.Delay(3000).Wait();
+                loreLabel.Text = "Você tem uma bússola, a ponteira amarela é munição, e a vermelha é ele...";
+                Task.Delay(5000).Wait();
                 this.Hide();
                 frm.Show();
                 tm.Stop();
@@ -72,7 +72,6 @@ namespace MazeJalma
         }
         public void sound()
         {
-            SoundPlayer som = new SoundPlayer(Properties.Resources.mine);
             som.Play();
         }
     }

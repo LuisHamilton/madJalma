@@ -18,16 +18,16 @@ namespace MazeJalma
         private Graphics g2 = null;
 
         int speedx = 0; int speedy = 0;//move for player
-        int pMove = 52; int pStop = 0;//states of player movement
+        int pMove = 24; int pStop = 0;//states of player movement
         int speedcX = 0; int speedcY = 0; //move for elements
-        int speed = 50; int health; //bot
-        int pontos = 20; int municao = 0; //hud
+        int speed = 28; int health; //bot
+        int pontos = 10; int municao = 0; //hud
         int col = 0; int col2 = 0; int col3 = 0; //collision
         int ottoX = 0; int ottoY = 0; //otto location
         int ammoX = 0; int ammoY = 0; //ammo location
         float botX = 0; float botY = 0; //edjalma location
-        float angle = 0; float angle2 = 0; float angle3 = 0; //angles for rotation
-        bool click = false; //shoot
+        float angle = 0; float angle2 = 0; float angle3 = 0; //angles for rotataion
+        bool click = false; int damage = 20; //shoot
 
         Random randX = new Random(); 
         Random randY = new Random();
@@ -38,6 +38,9 @@ namespace MazeJalma
         Point radarCenter; 
         PointF botLoc; //edjalma location
         SizeF botSpeed; //edjalma track
+
+        SoundPlayer shootSound = new SoundPlayer(Properties.Resources.tiro);
+        SoundPlayer noBullet = new SoundPlayer(Properties.Resources.audioSemMuni);
 
         Player playerEvents;
         Otto ottoEvents;
@@ -243,7 +246,7 @@ namespace MazeJalma
                 col3 = botEvents.killBot(bulletRect);
                 if (col3 == 1)
                 {
-                    health -= 34;
+                    health -= damage;
                     if (health <= 0)
                     {
                         this.Hide();
@@ -282,12 +285,10 @@ namespace MazeJalma
 
         private void playShootSound()
         {
-            SoundPlayer shootSound = new SoundPlayer(Properties.Resources.tiro);
             shootSound.Play();
         }
         private void playNoBulletSound()
         {
-            SoundPlayer noBullet = new SoundPlayer(Properties.Resources.audioSemMuni);
             noBullet.Play();
         }
     }
