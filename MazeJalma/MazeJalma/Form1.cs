@@ -18,9 +18,9 @@ namespace MazeJalma
         private Graphics g2 = null;
 
         int speedx = 0; int speedy = 0;//move for player
-        int pMove = 54; int pStop = 0;//states of player movement
+        int pMove = 52; int pStop = 0;//states of player movement
         int speedcX = 0; int speedcY = 0; //move for elements
-        int speed = 37; int health; //bot
+        int speed = 50; int health; //bot
         int pontos = 20; int municao = 0; //hud
         int col = 0; int col2 = 0; int col3 = 0; //collision
         int ottoX = 0; int ottoY = 0; //otto location
@@ -76,6 +76,7 @@ namespace MazeJalma
                 pictureBox2.SendToBack();
 
                 g2 = Graphics.FromImage(pictureBox2.Image);
+
 
                 frm1 = new Victory();
                 frm2 = new Defeat();
@@ -147,6 +148,16 @@ namespace MazeJalma
                 x += speedx; y += speedy;
                 ottoX += speedcX; ottoY += speedcY;
                 ammoX += speedcX; ammoY += speedcY;
+                if (speedx > 0)
+                    botX -= speedx;
+                else
+                    botX += speedcX;
+
+                if (speedy > 0)
+                    botY -= speedy;
+                else
+                    botY += speedcY;
+
 
                 //ensures elements stay still when player hit max length of the map in any ways
                 if (x < 0) { x = 0; ottoX -= speedcX; ammoX -= speedcX; botX -= speedcX; }
@@ -181,7 +192,7 @@ namespace MazeJalma
                 botLoc = botEvents.update(botLoc, botSpeed, speed);
                 botX = botLoc.X; botY = botLoc.Y;
                 botRect = botEvents.botMove(botimage, (int)botX, (int)botY);
-                angle2 = (float)Math.Atan2(botY - radarCenter.Y, botX - radarCenter.X) * (float)(180 / Math.PI);
+                angle2 = (float)Math.Atan2(botY - botimage.Height +75 - radarCenter.Y, botX - botimage.Width*2 + 120 - radarCenter.X) * (float)(180 / Math.PI);
                 //radar
                 radarEvents.Draw();
                 radarEvents.rotateBotRadar(angle2);

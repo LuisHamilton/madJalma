@@ -63,8 +63,8 @@ namespace MazeJalma
                 Task.Delay(2000).Wait();
                 loreLabel.Text = "Um inimigo gosta deles e procura sequestrá-los...";
                 Task.Delay(3000).Wait();
-                loreLabel.Text = "Então proteja-os do...";
-                Task.Delay(2000).Wait();
+                loreLabel.Text = "Você tem uma bússula, a ponteira amarela é munição, e a vermelha é ele...";
+                Task.Delay(3000).Wait();
                 this.Hide();
                 frm.Show();
                 tm.Stop();

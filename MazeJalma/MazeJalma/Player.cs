@@ -18,11 +18,13 @@ namespace MazeJalma
 
         public void mapMove(int x, int y, Bitmap btm, PictureBox pb)
         {
+
             g.Clear(Color.Transparent);
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.DrawImage(btm,
                 new Rectangle(0, 0, pb.Width, pb.Height),
                 new Rectangle(x, y, pb.Width, pb.Height), GraphicsUnit.Pixel);
+            g.DrawRectangle(Pens.Black, new Rectangle(555-x, 330-y, 8880, 8510));
         }
         
         public Rectangle rotateSoldier(float angle, Bitmap btm, PictureBox pb)
