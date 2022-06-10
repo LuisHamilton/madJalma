@@ -86,3 +86,4 @@ C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\Maze
 C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.victory.resources
 C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Defeat.resources
 C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.FrmLoad.resources
+C:\Users\lhbal\OneDrive\Área de Trabalho\Docs\reposGit\mazeJalma\MazeJalma\MazeJalma\obj\Debug\MazeJalma.Initial.resources

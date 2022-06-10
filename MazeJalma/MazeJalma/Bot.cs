@@ -28,7 +28,6 @@ namespace MazeJalma
             g.TranslateTransform(-botX, -botY);
 
             botRect = new Rectangle(botX, botY, bmp.Width / 2 - 18, bmp.Height / 2 + 5);
-            g.DrawRectangle(Pens.Red, botRect);
 
             return botRect;
         }

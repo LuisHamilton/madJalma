@@ -30,8 +30,6 @@ namespace MazeJalma
         {
             soldierRect = soldier;
 
-            g.DrawRectangle(Pens.Red, ammoRect);
-
             if (soldierRect.Top <= ammoRect.Bottom && soldierRect.Top > ammoRect.Top && ammoRect.Left >= soldierRect.Left && ammoRect.Left <= soldierRect.Right ||
                 soldierRect.Top <= ammoRect.Bottom && soldierRect.Top > ammoRect.Top && ammoRect.Right >= soldierRect.Left && ammoRect.Right <= soldierRect.Right)
             {

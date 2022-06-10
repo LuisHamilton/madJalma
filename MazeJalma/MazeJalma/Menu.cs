@@ -50,7 +50,7 @@ namespace MazeJalma
                 ottoEvents.menuOtto(ottoImg9, 550, 320);
                 ottoEvents.menuOtto(ottoImg10, 600, 320);
 
-                sound();
+                som.Play();
 
                 tm.Start();
             };
@@ -59,20 +59,23 @@ namespace MazeJalma
 
                 loreLabel.Text = "Esses são os ottos...";
                 Task.Delay(2000).Wait();
-                loreLabel.Text = "Robôs amigos que precisam de ajuda...";
-                Task.Delay(2000).Wait();
-                loreLabel.Text = "Um inimigo gosta deles e procura sequestrá-los...";
+                loreLabel.Text = "Robôs amigos que foram construídos para alegrar todos...";
                 Task.Delay(3000).Wait();
-                loreLabel.Text = "Você tem uma bússola, a ponteira amarela é munição, e a vermelha é ele...";
-                Task.Delay(5000).Wait();
+                loreLabel.Text = "Mas eles correm grande perigo e precisam de sua ajuda...";
+                Task.Delay(3000).Wait();
+                loreLabel.Text = "Um inimigo odeia eles e procura destruí-los...";
+                Task.Delay(3000).Wait();
+                loreLabel.Text = "Você deve pará-lo, e para isso te entrego uma pistola...";
+                Task.Delay(3000).Wait();
+                loreLabel.Text = "Não atire atoa, a munição é escassa. Além disso...";
+                Task.Delay(3000).Wait();
+                loreLabel.Text = "Você tem uma bússola, a ponteira amarela é uma caixa de munição, e a vermelha é onde ELE está...";
+                Task.Delay(7000).Wait();
                 this.Hide();
                 frm.Show();
+                som.Stop();
                 tm.Stop();
             };
-        }
-        public void sound()
-        {
-            som.Play();
         }
     }
 }

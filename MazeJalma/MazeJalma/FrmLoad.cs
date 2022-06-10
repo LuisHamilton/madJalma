@@ -20,7 +20,7 @@ namespace MazeJalma
         private void FrmLoad_Load(object sender, EventArgs e)
         {
             Timer timer = new Timer();
-            timer.Interval = 5000;
+            timer.Interval = 3000;
             timer.Tick += delegate
             {
                 this.Hide();

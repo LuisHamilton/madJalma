@@ -21,7 +21,7 @@ namespace MazeJalma
         int pMove = 24; int pStop = 0;//states of player movement
         int speedcX = 0; int speedcY = 0; //move for elements
         int speed = 28; int health; //bot
-        int pontos = 10; int municao = 0; //hud
+        int pontos = 10; int municao = 0; int difficult = 0; bool choice = false; //hud
         int col = 0; int col2 = 0; int col3 = 0; //collision
         int ottoX = 0; int ottoY = 0; //otto location
         int ammoX = 0; int ammoY = 0; //ammo location
@@ -92,6 +92,8 @@ namespace MazeJalma
                 radarEvents = new Radar(g2);
                 bulletEvents = null;
 
+                
+
                 tm.Start();
             };
             this.KeyDown += (s, e) =>
@@ -116,6 +118,24 @@ namespace MazeJalma
                     case Keys.S:
                         speedy = pMove;
                         speedcY = -pMove;
+                        break;
+                    case Keys.D1:
+                        difficult = 1;
+                        break;
+                    case Keys.D2:
+                        difficult = 2;
+                        break;
+                    case Keys.D3:
+                        difficult = 3;
+                        break;
+                    case Keys.NumPad1:
+                        difficult = 1;
+                        break;
+                    case Keys.NumPad2:
+                        difficult = 2;
+                        break;
+                    case Keys.NumPad3:
+                        difficult = 3;
                         break;
                 }
             };
@@ -142,10 +162,39 @@ namespace MazeJalma
                         speedy = pStop;
                         speedcY = pStop;
                         break;
+                    case Keys.D1:
+                        difficult = 1;
+                        break;
+                    case Keys.D2:
+                        difficult = 2;
+                        break;
+                    case Keys.D3:
+                        difficult = 3;
+                        break;
+                    case Keys.NumPad1:
+                        difficult = 1;
+                        break;
+                    case Keys.NumPad2:
+                        difficult = 2;
+                        break;
+                    case Keys.NumPad3:
+                        difficult = 3;
+                        break;
                 }
             };
             tm.Tick += delegate
             {
+                if (choice == false)
+                {
+                    x = 0; y = 0; botX = 8720; botY = 8355;
+                    if(speedx>0) { speedcX = 0; }
+                    if(speedy>0) { speedcY = 0; }
+                    if (difficult == 1) { speed = 28; pMove = 24; pontos = 10; lblDifficult.Visible = false; choice = true; }
+                    else if (difficult == 2) { speed = 39; pMove = 38; pontos = 15; lblDifficult.Visible = false; choice = true; }
+                    else if (difficult == 3) { speed = 50; pMove = 52; pontos = 20; lblDifficult.Visible = false; choice = true; }
+                }
+
+
                 //ensures elements stay in his location
                 botSpeed = new SizeF(ottoX, ottoY); 
                 x += speedx; y += speedy;
@@ -256,7 +305,7 @@ namespace MazeJalma
                     }
                     else
                         healthBar.Value = health;
-                        
+
                     botX = spawnEvents.coordenada(x);
                     botY = spawnEvents.coordenada(y);
                 }
@@ -291,5 +340,7 @@ namespace MazeJalma
         {
             noBullet.Play();
         }
+
+
     }
 }
